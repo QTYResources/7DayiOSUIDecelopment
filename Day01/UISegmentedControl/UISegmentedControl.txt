@@ -1,0 +1,44 @@
+UISegmentedControl 使用示例代码
+
+（1）创建UISegmentedControl对象
+	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"one", @"two", @"three", @"four"]];
+	UISegmentedControl *segmentedControl = [[UISegmentedControl alloc]initWithFrame:CGRectMake(20, 100, 280, 40)];
+
+（2）UISegmentedControl中的momentary决定了其“切换”功能的本质。这个属性默认为NO，当用户点击某个切换模块按钮时，这个按钮会保持选中状态。如果设置为YES，则当用户的手指离开屏幕时，按钮的选中状态也会消失。
+	segmentedControl.momentary = YES;
+
+（3）设置UISegmentedControl当前选中的模块，下标从0开始
+	segmentedControl.selectedSegmentIndex = 2;
+
+（4）向UISegmentedControl控件新增一个模块
+	[segmentedControl insertSegmentWithImage:[UIImage imageNamed:@"imageName"] atIndex:1 animated:YES];
+	[segmentedControl insertSegmentWithTitle:@"新增" atIndex:0 animated:YES];
+
+（5）删除UISegmentedControl中的某个模块
+	[segmentedControl removeSegmentAtIndex:1 animated:YES];
+
+（6）删除UISegmentedControl中的所有模块
+	[segmentedControl removeAllSegments];
+
+（7）修改UISegmentedControl控件中某个模块的标题
+	[segmentedControl setTitle:@"修改" forSegmentAtIndex:1];
+
+（8）修改UISegmentedControl控件中某个模块的图片
+	[segmentedControl setImage:[UIImage imageNamed:@"imageName"] forSegmentAtIndex:1];
+
+（9）如果UISegmentedControl控件中某个模块标题过长，则会被自动省略。可以通过手动方式设置每个按钮的宽度
+	[segmentedControl setWidth:100 forSegmentAtIndex:1];
+
+（10）如果UISegmentedControl控件中某个模块标题过长，则会被自动省略。也可以设置每个按钮的宽度自适应
+	segmentedControl.apportionsSegmentWidthsByContent = YES;
+
+（11）自定义模块中的内容的位置
+	[segmentedControl setContentOffset:CGSizeMake(10, 10) forSegmentAtIndex:1];
+
+（12）设置UISegmentedControl控件的触发方法
+	[segmentedControl addTarget:self action:@selector(click:) forControlEvents:UIControEventValueChanged];
+
+	- (void)click:(UISegmentedControl *)seg {
+		// 获取当前选中的按钮编码
+		NSUInteger index = seg.selectedSegmentIndex;
+	}
