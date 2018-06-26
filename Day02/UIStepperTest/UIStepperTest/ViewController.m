@@ -36,13 +36,13 @@
     // 设置UIStepper控件的颜色
     stepper.tintColor = [UIColor redColor];
     // 设置背景图案
-    [stepper setBackgroundImage:[UIImage imageNamed:@"image"] forState:UIControlStateNormal];
+//    [stepper setBackgroundImage:[UIImage imageNamed:@"image"] forState:UIControlStateNormal];
     // 设置分割线图案
     [stepper setDividerImage:[UIImage imageNamed:@"image"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
     // 设置增值按钮图片
-    [stepper setIncrementImage:[[UIImage imageNamed:@"image"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+//    [stepper setIncrementImage:[[UIImage imageNamed:@"image"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     // 设置减值按钮图片
-    [stepper setDecrementImage:[[UIImage imageNamed:@"iamge"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+//    [stepper setDecrementImage:[[UIImage imageNamed:@"iamge"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     // 设置UIStepper控件的触发方法
     [stepper addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:stepper];
